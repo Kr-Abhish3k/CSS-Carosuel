@@ -1,72 +1,6 @@
-/*<!-- TYPE 1 -->*/
-
-	/*/*.carousel{
-		overflow: hidden;
-		width: 100%;
-	}
-
-	.panes{
-
-		width: 500%; /*NUMBER OF PANES * 100%
-
-		list-style: none;
-		/*overflow: hidden;  SOLELY USED TO CLEAR FLOAT , DOES NOT ADD FUNCTIONALITY
-		position: relative;
-
-	   -moz-animation:carousel 30s infinite;
-	    -webkit-animation:carousel 30s infinite;
-	    animation:carousel 30s infinite;
-	}
-
-	.images{
-		width: 20%; /* 100/NUMBER OF PANES
-		position: relative;
-		float: left;
-	}
-
-	.carousel img{
-		display: block;
-		width: 100%;
-		max-width: 100%;
-	}
-
-	.carousel h2{
-	    font-size:1em;
-	    padding:0.5em;
-	    position:absolute;
-	    right:10px;
-	    bottom:10px;
-	    left:10px;
-	    text-align:right;
-	    color:#fff;
-	    background-color:rgba(0,0,0,0.75);
-	}
-
-	@keyframes carousel{
-	    0%    { left:0; }
-	    11%   { left:0; }
-	    12.5% { left:-100%; }
-	    23.5% { left:-100%; }
-	    25%   { left:-200%; }
-	    36%   { left:-200%; }
-	    37.5% { left:-300%; }
-	    48.5% { left:-300%; }
-	    50%   { left:-400%; }
-	    61%   { left:-400%; }
-	    62.5% { left:-300%; }
-	    73.5% { left:-300%; }
-	    75%   { left:-200%; }
-	    86%   { left:-200%; }
-	    87.5% { left:-100%; }
-	    98.5% { left:-100%; }
-	    100%  { left:0; }
-	}*/
-
-/*<!-- TYPE 2 -->*/
-
 .imageSlider{
 	margin: 100px auto;
-	width: 500px;
+	width: 500px; /* width of images in corousel*/
 }
 
 .slideFrame{
@@ -74,17 +8,25 @@
 	overflow: hidden;
 }
 
+.slideFrame img{
+	max-width: 100%; 
+}
+
 .slides{
-	height: 375px;
+	height: 375px; /* size  of Corousel */
 	overflow: hidden;
-	position: relative;
+	position: relative; /* child images will have absolute position*/
 }
 
 .slides img{
 	position: absolute;
 	max-width: 100%;
 	top: 0;
-	left: -500px;
+	left: -500px; 
+	/*left has a negative value which equals to the width of one of the images. 
+	It's used to set the initial position of the images, placing them out of the element "slides". 
+	It's used for animation when the next slide appears from the left side.
+	when user clicks to slide the image , we set left to 0 for that image.*/
 }
 
 .navigation{
@@ -116,8 +58,8 @@
  	-webkit-transition: all linear 400ms;
 }
 
-.slides img:target{
+.slides img:target{ /* the :target selector is used to target the image we click on */
 	left: 0;
-	z-index: 5;
+	z-index: 5; /* to overlay other images by the targeted one */
 	opacity: 1;
 }
