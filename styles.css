@@ -1,0 +1,123 @@
+/*<!-- TYPE 1 -->*/
+
+	/*/*.carousel{
+		overflow: hidden;
+		width: 100%;
+	}
+
+	.panes{
+
+		width: 500%; /*NUMBER OF PANES * 100%
+
+		list-style: none;
+		/*overflow: hidden;  SOLELY USED TO CLEAR FLOAT , DOES NOT ADD FUNCTIONALITY
+		position: relative;
+
+	   -moz-animation:carousel 30s infinite;
+	    -webkit-animation:carousel 30s infinite;
+	    animation:carousel 30s infinite;
+	}
+
+	.images{
+		width: 20%; /* 100/NUMBER OF PANES
+		position: relative;
+		float: left;
+	}
+
+	.carousel img{
+		display: block;
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.carousel h2{
+	    font-size:1em;
+	    padding:0.5em;
+	    position:absolute;
+	    right:10px;
+	    bottom:10px;
+	    left:10px;
+	    text-align:right;
+	    color:#fff;
+	    background-color:rgba(0,0,0,0.75);
+	}
+
+	@keyframes carousel{
+	    0%    { left:0; }
+	    11%   { left:0; }
+	    12.5% { left:-100%; }
+	    23.5% { left:-100%; }
+	    25%   { left:-200%; }
+	    36%   { left:-200%; }
+	    37.5% { left:-300%; }
+	    48.5% { left:-300%; }
+	    50%   { left:-400%; }
+	    61%   { left:-400%; }
+	    62.5% { left:-300%; }
+	    73.5% { left:-300%; }
+	    75%   { left:-200%; }
+	    86%   { left:-200%; }
+	    87.5% { left:-100%; }
+	    98.5% { left:-100%; }
+	    100%  { left:0; }
+	}*/
+
+/*<!-- TYPE 2 -->*/
+
+.imageSlider{
+	margin: 100px auto;
+	width: 500px;
+}
+
+.slideFrame{
+	height: 375px;
+	overflow: hidden;
+}
+
+.slides{
+	height: 375px;
+	overflow: hidden;
+	position: relative;
+}
+
+.slides img{
+	position: absolute;
+	max-width: 100%;
+	top: 0;
+	left: -500px;
+}
+
+.navigation{
+	margin: 5px 0 0 0;
+	text-align: center;
+	z-index: 10;
+}
+
+.navigation a {
+  text-decoration: none;
+  background: #003C72;
+  padding: 2px 6px;
+  color: #FFFFFF;
+  display: inline-block;
+}
+
+.navigation a:hover {
+  background: #0182C4;
+}
+
+.slides img{
+	z-index: 1;
+	opacity: 0;
+
+	/* FOR ANIMATION */
+ 	transition: all linear 400ms;
+ 	-o-transition: all linear 400ms;
+ 	-moz-transition: all linear 400ms;
+ 	-webkit-transition: all linear 400ms;
+}
+
+.slides img:target{
+	left: 0;
+	z-index: 5;
+	opacity: 1;
+}
