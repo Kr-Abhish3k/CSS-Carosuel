@@ -1,0 +1,62 @@
+.container{
+	margin: 0 auto;
+}
+
+.slider{
+	height: 15em;
+	width: 25em;
+	position: relative;
+}
+
+.slider li{
+	list-style: none;
+	position: absolute;
+}
+
+.slider img{
+	height: 15em;
+	width: 25em;
+	vertical-align: top;
+	max-width: 100%;
+}
+
+.slider input{
+	display: none;
+}
+
+.slider label{
+	background-color: #111;
+	bottom: 0.5em;
+	display: block;
+	width: 0.5em;
+	height: 0.5em;
+	z-index: 10;
+	position: absolute;
+	cursor: pointer;
+}
+
+.slider li:nth-child(1) label{
+	left: 0.5em;
+}
+
+.slider li:nth-child(2){
+	left: 2em;
+}
+
+.slider li:nth-child(3){
+	left: 4em;
+}
+
+.slider li:nth-child(4){
+	left: 5em;
+}
+
+.slider img{
+	opacity: 0;
+	visibility: hidden;
+}
+.slider li input:checked ~img{
+	opacity: 1;
+	visibility: visible;
+	z-index: 10; 
+}
